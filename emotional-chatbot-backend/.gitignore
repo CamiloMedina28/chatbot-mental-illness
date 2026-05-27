@@ -4,6 +4,7 @@ HELP.md
 # Maven
 # =========================
 target/
+.m2/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
