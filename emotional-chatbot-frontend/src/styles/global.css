@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* These tokens keep a consistent pastel-green visual system across components. */
+@theme {
+  --color-mint-50: #f2fbf6;
+  --color-mint-100: #e6f6ed;
+  --color-mint-200: #d4efdf;
+  --color-mint-300: #b7e5cb;
+  --color-mint-400: #8fd4ab;
+  --color-mint-500: #63be89;
+  --color-forest-700: #2d5f4a;
+  --color-forest-800: #234a3a;
+  --color-ink-700: #365048;
+
+  --shadow-soft: 0 10px 30px -18px rgba(69, 119, 96, 0.45);
+  --radius-panel: 1.25rem;
+}
+
+/* The base layer sets typography and soft atmospheric background tones. */
+@layer base {
+  body {
+    font-family: "Inter", "Avenir Next", "Segoe UI", sans-serif;
+    background-image:
+      radial-gradient(circle at 0% 0%, rgba(143, 212, 171, 0.35), transparent 45%),
+      radial-gradient(circle at 100% 100%, rgba(183, 229, 203, 0.45), transparent 42%);
+  }
+}
+
+/* Reusable utility classes reduce duplication and improve consistency. */
+@layer components {
+  .panel {
+    @apply rounded-[var(--radius-panel)] border border-mint-200/70 bg-white/90 p-5 shadow-[var(--shadow-soft)] backdrop-blur;
+  }
+
+  .btn-primary {
+    @apply rounded-xl bg-forest-700 px-4 py-2 font-semibold text-white transition hover:bg-forest-800 focus:outline-none focus:ring-2 focus:ring-mint-300;
+  }
+
+  .btn-secondary {
+    @apply rounded-xl border border-mint-300 bg-mint-100 px-4 py-2 font-semibold text-forest-700 transition hover:bg-mint-200 focus:outline-none focus:ring-2 focus:ring-mint-300;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-mint-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition focus:border-mint-400 focus:ring-2 focus:ring-mint-200;
+  }
+}
