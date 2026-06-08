@@ -4,8 +4,7 @@ import com.ingesoftdosUNAL.emotional_chatbot_backend.auth.dto.MessageResponse;
 import com.ingesoftdosUNAL.emotional_chatbot_backend.auth.dto.RegisterRequest;
 import com.ingesoftdosUNAL.emotional_chatbot_backend.auth.service.UserRegisterService;
 import jakarta.validation.Valid;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/auth")
-@Builder
+@RequiredArgsConstructor
 public class userController {
-    private UserRegisterService userreg;
+    private final UserRegisterService userreg;
 
     @PostMapping("/register")
     public ResponseEntity<MessageResponse> register(@Valid @RequestBody RegisterRequest request){

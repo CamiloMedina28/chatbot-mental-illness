@@ -1,11 +1,5 @@
 package com.ingesoftdosUNAL.emotional_chatbot_backend.user.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -14,7 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 
 /*
@@ -26,39 +22,29 @@ import org.hibernate.annotations.CreationTimestamp;
  *
  * @author cmedi
  */
-@Entity
-@Table(name = "usuarios",
-        uniqueConstraints = {
-            @UniqueConstraint(columnNames = "correo")
-        })
+@Document(collection = "usuarios")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class
-User {
+public class User {
 
     @Id
-    @GeneratedValue
-    private Long id;
-        
+    private String id;
+    
     @NotBlank
     @Size(min = 3, max = 50)
-    @Column(nullable = false, length = 50)
     private String nombre;
     
     @NotBlank
     @Email
+    @Indexed(unique = true)
     private String correo;
     
     @NotBlank
     @Size(min = 6, max = 255)
-    @Column(nullable = false)
     private String password;
     
-    @CreationTimestamp
-    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
-    
-    
+
 }
