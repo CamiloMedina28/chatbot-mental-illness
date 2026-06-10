@@ -42,7 +42,7 @@ public class AuthService {
 
     public AuthResponse login(LoginRequest request) {
         String correoNormalizado = request.getCorreo().trim().toLowerCase();
-        User user = userRepository.findUserByCorreo(correoNormalizado)
+        User user = userRepository.findByCorreo(correoNormalizado)
                 .orElseThrow(() -> new BadCredentialsException("Credenciales inválidas"));
 
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
