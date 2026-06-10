@@ -1,3 +1,25 @@
+Comandos para abrir los 3 terminales
+
+1) Terminal del frontend
+
+cd "c:\Users\santi\Documents\GitHub\All at new github\chatbot-mental-illness\emotional-chatbot-frontend"
+pnpm install
+pnpm dev
+
+2) Terminal del servicio del modelo IA
+
+cd "c:\Users\santi\Documents\GitHub\All at new github\chatbot-mental-illness\ia-service"
+python -m pip install -r requirements.txt
+python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+3) Terminal del backend
+
+cd "c:\Users\santi\Documents\GitHub\All at new github\chatbot-mental-illness\emotional-chatbot-backend"
+$env:JAVA_HOME='C:\Program Files\Microsoft\jdk-21.0.11.10-hotspot'
+.\mvnw.cmd spring-boot:run
+
+
+
 # Backend - Guía rápida de ejecución
 
 ## Requisitos
