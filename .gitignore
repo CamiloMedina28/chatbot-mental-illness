@@ -1,0 +1,74 @@
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+Thumbs.db
+*.iml
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+mvnw.cmd
+
+# Node & npm
+node_modules/
+npm-debug.log
+npm-debug.log.*
+yarn-debug.log
+yarn-error.log
+.pnpm-debug.log
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Astro
+dist/
+.astro/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Build outputs
+*.jar
+*.war
+*.rar
+*.class
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+.~*
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Distribution
+dist/
+build/
