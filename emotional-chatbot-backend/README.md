@@ -28,6 +28,7 @@ las variables de entorno y a su vez contiene algunos parámetros por default que
 - `DB_PASSWORD`: La credencial de contraseña para el inicio de sesión en la base de datos
 - `JWT_SECRET`: El valor que permitirá la encriptación de los JWT.
 - `JWT_EXPIRATION_MS`: El tiempo de expiración del JWT.
+- `IA_SERVICE_BASE_URL`: URL base del microservicio IA que clasifica emociones y genera la respuesta del chatbot.
 - `CORS_ALLOWED_ORIGIN`: Los origenes que no están bloqueados por la política CORS.
 
 ### Guía de uso de la API (SWAGGER - Catálogo de endpoints)
