@@ -7,10 +7,10 @@ export class AuthApi implements AuthGateway {
   constructor(private readonly httpClient: HttpClient) {}
 
   login(payload: LoginPayload): Promise<AuthResponse> {
-    return this.httpClient.post<LoginPayload, AuthResponse>('/auth/login', payload);
+    return this.httpClient.post<LoginPayload, AuthResponse>('/api/auth/login', payload);
   }
 
   register(payload: RegisterPayload): Promise<{ message: string }> {
-    return this.httpClient.post<RegisterPayload, { message: string }>('/auth/register', payload);
+    return this.httpClient.post<RegisterPayload, { message: string }>('/api/auth/register', payload);
   }
 }

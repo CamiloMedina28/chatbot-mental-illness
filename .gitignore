@@ -28,6 +28,7 @@ application-secret.yml
 # Logs
 # =========================
 logs/
+.codex-runtime/
 *.log
 *.pid
 *.seed
